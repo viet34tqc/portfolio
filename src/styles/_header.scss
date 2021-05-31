@@ -1,0 +1,21 @@
+header {
+	padding: 24px 42px;
+	position: sticky;
+	top: 0;
+	@media (max-width: 575px) {
+		flex-direction: column;
+	}
+}
+
+.header-logo {
+	font-weight: 700;
+	color: var(--c-text);
+	font-size: 32px;
+}
+
+.header-nav a {
+	padding: 6px 8px;
+	&:last-child {
+		padding-right: 0;
+	}
+}
