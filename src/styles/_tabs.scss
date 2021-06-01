@@ -1,21 +1,29 @@
+.tabs-nav {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 24px;
+}
+
 .tabs-nav__link {
 	cursor: pointer;
 	padding: 8px 16px;
 	border: 0;
 	border-bottom: 2px solid transparent;
 	background: none;
-
-	&--active {
-		border-bottom: 2px solid var(--c-link);
-	}
+	font-size: 18px;
+	&--active,
 	&:hover {
-		border-bottom: 2px solid var(--c-link);
+		color: var(--c-text-secondary);
 	}
 }
 
 .tabs-panels__panel {
 	display: none;
 	&--active {
-		display: block;
+		display: grid;
+		grid-gap: 32px;
+		@media (min-width: 768px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
 	}
 }

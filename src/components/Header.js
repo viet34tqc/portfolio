@@ -7,7 +7,7 @@ const Header = () => {
 				<a className="header-logo">VietNguyen</a>
 			</Link>
 
-			<nav class="header-nav d-flex space-between">
+			<nav className="header-nav d-flex space-between">
 				<Link href="/">Blog</Link>
 				<Link href="mail:viet34tqc@gmail.com">Contact</Link>
 			</nav>

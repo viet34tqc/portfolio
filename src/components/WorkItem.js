@@ -4,10 +4,20 @@ const WorkItem = ( { work } ) => {
 	const { link, meta } = work;
 
 	return (
-		<article>
+		<article className="work">
 			<Link href={ "/works" + link }>
-				<a>Read more &rarr;</a>
+				<a href={ "/works" + link } className="work__thumb">
+					<img src={ meta.thumb } alt="" />
+				</a>
 			</Link>
+
+			<div className="work__body">
+				<h3 className="work__title">
+					<Link href={ "/works" + link }>{ meta.title }</Link>
+				</h3>
+
+				<p className="word__desc">{ meta.description }</p>
+			</div>
 		</article>
 	);
 };
