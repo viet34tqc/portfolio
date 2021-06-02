@@ -11,13 +11,11 @@ const WorkItem = ( { work } ) => {
 				</a>
 			</Link>
 
-			<div className="work__body">
 				<h3 className="work__title">
 					<Link href={ "/works" + link }>{ meta.title }</Link>
 				</h3>
 
 				<p className="word__desc">{ meta.description }</p>
-			</div>
 		</article>
 	);
 };

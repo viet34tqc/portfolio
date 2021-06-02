@@ -8,6 +8,7 @@ export default function Home() {
 			title="VietNguyen | Portfolio"
 			description="Portfolio of VietNguyen, a web deverloper"
 		>
+			<h1 hidden>Hompage</h1>
 			<Intro />
 			<WorkList />
 		</Layout>
