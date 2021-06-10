@@ -12,6 +12,12 @@ header {
 	font-size: 32px;
 }
 
+.header-darkmode {
+	background: none;
+	border: none;
+	color: var(--c-text);
+}
+
 .header-nav a {
 	padding: 6px 8px;
 	color: var(--c-text-secondary);

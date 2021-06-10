@@ -11,9 +11,10 @@
 	border-bottom: 2px solid transparent;
 	background: none;
 	font-size: 18px;
+	color: var(--c-text-secondary);
 	&--active,
 	&:hover {
-		color: var(--c-text-secondary);
+		color: var(--c-text);
 	}
 }
 

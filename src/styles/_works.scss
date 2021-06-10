@@ -7,10 +7,8 @@
 	position: relative;
 	transition: all 0.3s ease;
 	width: 100%;
-	&:hover {
-		img {
-			transform: scale(1.1);
-		}
+	&:hover img {
+		transform: scale(1.1);
 	}
 
 	p {
@@ -19,7 +17,7 @@
 	}
 
 	&__title {
-		margin-bottom: 12px;
+		margin-bottom: 8px;
 	}
 
 	&__thumb {
@@ -27,6 +25,7 @@
 		display: block;
 		overflow: hidden;
 		margin-bottom: 12px;
+		box-shadow: 0 2px 30px rgb(0 0 0 / 10%);
 		img {
 			position: absolute;
 			width: 100%;
@@ -38,7 +37,7 @@
 		&:after {
 			content: '';
 			display: block;
-			padding-top: 56.25%;
+			padding-top: 75%;
 		}
 	}
 }

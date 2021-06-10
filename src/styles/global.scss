@@ -5,8 +5,24 @@
 	--c-text-secondary: #6d7777;
 	--c-link: #124a63;
 	--c-blue: #0079ff;
+	--c-border: rgba(0, 0, 0, 0.1);
+
+	--c-body-bg: #fff;
 
 	--box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] {
+	--c-text: #f0f0f0;
+	--c-text-secondary: #b3c5cd;
+	--c-border: #3c393f;
+	--c-link: #3aa7d8;
+
+	--c-body-bg: #252329;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 body {
@@ -14,6 +30,7 @@ body {
 	margin: 0;
 	font-family: var(--f-main);
 	color: var(--c-text);
+	background: var(--c-body-bg);
 	line-height: 1.5;
 	font-size: 18px;
 }
@@ -47,10 +64,6 @@ p {
 	margin: 0 0 1em;
 }
 
-* {
-	box-sizing: border-box;
-}
-
 .container {
 	padding: 0 32px;
 	margin: 0 auto;
@@ -71,6 +84,10 @@ svg {
 	height: 1.5rem;
 	vertical-align: middle;
 	fill: currentColor;
+}
+
+button {
+	cursor: pointer;
 }
 
 @import 'utils';
