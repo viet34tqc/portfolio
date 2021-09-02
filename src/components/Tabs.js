@@ -7,12 +7,11 @@ const Tabs = ({ defaultTab = '', children }) => {
 	const changeTab = (activeTab) => {
 		setActiveTab(activeTab);
 	};
-	const items = children.filter((item) => item.type.name === 'TabItem');
 
 	return (
 		<div className="tabs-wrapper">
 			<div className="tabs-nav">
-				{items.map(({ props: { index, label } }) => (
+				{children.map(({ props: { index, label } }) => (
 					<button
 						key={index}
 						onClick={() => changeTab(index)}
@@ -25,7 +24,7 @@ const Tabs = ({ defaultTab = '', children }) => {
 				))}
 			</div>
 			<div className="tabs-panels">
-				{items.map(({ props }) => (
+				{children.map(({ props }) => (
 					<div
 						{...props}
 						className={`tabs-panels__panel ${
