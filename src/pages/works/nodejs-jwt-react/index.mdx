@@ -1,0 +1,29 @@
+import Single from '../../../components/Single';
+import Image from 'next/image';
+
+export const meta = {
+  title: 'NodeJS JWT React',
+  tag: 'Frontend',
+  description:
+    'A fullstack app using NodeJS for backend and React for frontend',
+  position: 'Developer',
+  tech: 'NodeJS, React, TypeScript, JWT, Prisma',
+  thumb: 'nodejs-jwt-react/thumb.jpg',
+  demo: 'http://demo-node.vietnguyenwp.com/',
+  github: 'https://github.com/viet34tqc/demo-nodejs-jwt',
+};
+
+export default ({ children }) => <Single meta={meta}>{children}</Single>;
+
+Here are the features:
+
+- Authentication using JWT via cookie
+- Role-based authorization
+- User can create, update, delete post and comments for each post
+- Admin user can delete comment while Subscriber user cannot
+
+<img src="https://i.imgur.com/5TjOdpn.png" width="1280" height="750" />
+
+<img src="https://i.imgur.com/oL6XTMq.png" width="1280" height="750" />
+
+<img src="https://i.imgur.com/yoh7Kkm.png" width="1280" height="750" />
