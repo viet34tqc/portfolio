@@ -11,8 +11,8 @@ const Intro = () => {
         <div className="intro__right">
           <p>
             I&apos;m a developer based in Ha Noi, Viet Nam. I have started my
-            Web development since 2017 and focused mostly on <b>WordPress</b>,{' '}
-            <b>ReactJS</b> and other <b>Front-end</b> technologies.
+            Web development since 2017 and focused mostly on{' '}
+            <b>Frontend technologies</b>
           </p>
           <p>
             In my free time, I do freelancing to help other people build their

@@ -10,7 +10,7 @@ const Header = () => {
         VietNguyen
       </Link>
 
-      <nav className="flex items-center [&>a]:p-2">
+      <nav className="flex items-center [&>a]:p-3">
         <Link href="mailto:viet34tqc@gmail.com">Contact</Link>
         <ThemeToggler />
       </nav>
