@@ -26,6 +26,7 @@
 }
 
 body {
+  font-size: 1.125rem;
   color: var(--c-text);
   background: var(--c-body-bg);
   font-family: var(--f-main);
@@ -74,4 +75,8 @@ svg {
 }
 button {
   cursor: pointer;
+}
+
+p:last-child {
+  margin-bottom: 0;
 }
