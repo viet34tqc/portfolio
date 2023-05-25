@@ -1,9 +1,4 @@
-const withMDX = require('@next/mdx')({
-	extension: /\.mdx?$/,
-});
-module.exports = withMDX({
-	pageExtensions: ['js', 'jsx', 'mdx'],
-	images: {
-		domains: ['i.imgur.com'],
-	},
-});
+/** @type {import('next').NextConfig} */
+const nextConfig = {}
+
+module.exports = nextConfig
