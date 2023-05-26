@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <main>
       <Intro />
+      {/* @ts-expect-error Server Component */}
       <WorkList />
     </main>
   );

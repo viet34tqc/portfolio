@@ -50,10 +50,11 @@ h2 {
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
-:where(h1, h2, h3, h4) {
+:is(h1, h2, h3, h4) {
+  font-weight: bold;
   margin: 0 0 1em;
 }
 

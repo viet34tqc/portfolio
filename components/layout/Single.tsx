@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 
-type SingleType = {
+export type SingleType = {
   meta: {
     title: string;
     tag: string;
@@ -10,6 +10,7 @@ type SingleType = {
     thumb: string;
     demo: string;
     github: string;
+    slug: string;
   };
 };
 

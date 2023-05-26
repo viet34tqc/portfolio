@@ -1,7 +1,7 @@
 const Intro = () => {
   return (
     <section className="py-16 border-b border-b-border">
-      <div className="container grid grid-cols-2">
+      <div className="container grid gap-8 md:grid-cols-2">
         <div>
           <p className="text-5xl font-bold mb-3">Hi, I&apos;m Viet Nguyen</p>
           <p className="text-2xl text-text-secondary">

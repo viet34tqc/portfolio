@@ -5,7 +5,7 @@ import ThemeToggler from './ThemeToggler';
 
 const Header = () => {
   return (
-    <header className="flex justify-between align-center p-8">
+    <header className="flex flex-col sm:flex-row flex-wrap justify-between align-center p-8">
       <Link className="font-bold text-3xl text-text" href="/">
         VietNguyen
       </Link>

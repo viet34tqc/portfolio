@@ -1,11 +1,15 @@
 import { getWorkBySlug } from '@/components/WorkList';
 import Single from '@/components/layout/Single';
 
-type Props = {};
+type Props = {
+  params: {
+    slug: string;
+  }
+};
 
-const page = async ({ params: { slug } }: any) => {
+const Work = async ({ params: { slug } }: Props) => {
   const { meta, content } = await getWorkBySlug(slug);
   return <Single meta={meta}>{content}</Single>;
 };
 
-export default page;
+export default Work;
