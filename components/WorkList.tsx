@@ -2,8 +2,8 @@ import { readFileSync, readdirSync } from 'fs';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
 import path from 'path';
-import { SingleType } from './layout/Single';
-import WorkListTabs, { TWorks } from './layout/WorkListTabs';
+import { TWorkMeta } from './layout/Single';
+import WorkListTabs from './layout/WorkListTabs';
 
 const contentDir = path.join(process.cwd(), 'app', 'works', 'contents');
 
@@ -11,7 +11,7 @@ export async function getWorkBySlug(slug: string) {
   const slugWithoutMdx = slug.replace(/\.mdx$/, '');
   const filePath = path.join(contentDir, `${slugWithoutMdx}.mdx`);
   const fileContent = readFileSync(filePath, { encoding: 'utf-8' });
-  const { frontmatter, content } = await compileMDX<SingleType['meta']>({
+  const { frontmatter, content } = await compileMDX<TWorkMeta>({
     source: fileContent,
     components: {
       Image,
@@ -31,7 +31,7 @@ export async function getAllWorks() {
 
   // Using forEach as a workaround because of allSettled
   const errors: string[] = [];
-  const values: SingleType[] = [];
+  const works: TWorkMeta[] = [];
   results.forEach(result => {
     if (result.status === 'rejected') {
       errors.push(result.reason);
@@ -39,27 +39,17 @@ export async function getAllWorks() {
   });
   results.forEach(result => {
     if (result.status === 'fulfilled') {
-      values.push(result.value);
+      works.push(result.value.meta);
     }
   });
-  const works: TWorks = {
-    Frontend: [],
-    WordPress: [],
-  };
-  values.forEach(value => {
-    const tag = value.meta.tag as keyof typeof works;
-    if (!Object.keys(works).includes(tag)) {
-      return;
-    }
-    works[tag].push(value.meta);
-  });
-  return [errors, works] as [string[], TWorks];
+
+  return [errors, works] as [string[], TWorkMeta[]];
 }
 
 const WorkList = async () => {
   const [errors, works] = await getAllWorks();
   let Content: () => JSX.Element;
-  if (errors.length > 0 || Object.values(works)[0].length === 0)
+  if (errors.length > 0 || Object.values(works).length === 0)
     // eslint-disable-next-line react/display-name
     Content = () => <>Cannot get works</>;
   else {

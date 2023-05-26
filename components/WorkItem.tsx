@@ -1,12 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { SingleType } from './layout/Single';
+import { TWorkMeta } from './layout/Single';
 
-type TWork = {
-  work: SingleType['meta'];
-};
-
-const WorkItem = ({ work }: TWork) => {
+const WorkItem = ({ work }: { work: TWorkMeta }) => {
   const slug = `/works/${work.slug}`;
   return (
     <article className="space-y-3">

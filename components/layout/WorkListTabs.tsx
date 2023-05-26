@@ -2,20 +2,28 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
 import WorkItem from '../WorkItem';
-import { SingleType } from './Single';
+import { TWorkMeta } from './Single';
 
-export type TWorks = {
-  Frontend: SingleType['meta'][];
-  WordPress: SingleType['meta'][];
+export type TFilteredWorks = {
+  Frontend: TWorkMeta[];
+  WordPress: TWorkMeta[];
 };
 
-type Props = { works: TWorks };
+type Props = { works: TWorkMeta[] };
 
 const WorkListTabs = ({ works }: Props) => {
+  const filteredWorks: TFilteredWorks = {
+    Frontend: [],
+    WordPress: [],
+  };
+  works.forEach(work => {
+    const tag = work.tag as keyof typeof filteredWorks;
+    filteredWorks[tag].push(work);
+  });
   return (
     <Tabs defaultValue="Frontend">
       <TabsList className="flex justify-center mb-6">
-        {Object.keys(works).map(tag => (
+        {Object.keys(filteredWorks).map(tag => (
           <TabsTrigger
             className="py-2 px-4 data-[state='active']:border-b border-b-text"
             key={tag}
@@ -25,14 +33,14 @@ const WorkListTabs = ({ works }: Props) => {
           </TabsTrigger>
         ))}
       </TabsList>
-      {Object.entries(works).map(([tag, works]) => {
+      {Object.entries(filteredWorks).map(([tag, worksByTag]) => {
         return (
           <TabsContent
             className="grid gap-8 md:grid-cols-3"
             key={tag}
             value={tag}
           >
-            {works.map(work => (
+            {worksByTag.map(work => (
               <WorkItem key={work.slug} work={work} />
             ))}
           </TabsContent>

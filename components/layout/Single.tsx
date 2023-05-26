@@ -1,7 +1,6 @@
 import { PropsWithChildren } from 'react';
 
-export type SingleType = {
-  meta: {
+export type TWorkMeta = {
     title: string;
     tag: string;
     description: string;
@@ -11,13 +10,13 @@ export type SingleType = {
     demo: string;
     github: string;
     slug: string;
-  };
+}
+
+export type TWorkProps = {
+  meta: TWorkMeta;
 };
 
-export default function Single({
-  children,
-  meta,
-}: PropsWithChildren<SingleType>) {
+export default function Single({ children, meta }: PropsWithChildren<TWorkProps>) {
   return (
     <article className="py-16 container">
       <div className="grid md:grid-cols-[3fr,1fr] gap-4">
