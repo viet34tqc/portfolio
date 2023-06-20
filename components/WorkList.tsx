@@ -35,10 +35,7 @@ export async function getAllWorks() {
   results.forEach(result => {
     if (result.status === 'rejected') {
       errors.push(result.reason);
-    }
-  });
-  results.forEach(result => {
-    if (result.status === 'fulfilled') {
+    } else if (result.status === 'fulfilled') {
       works.push(result.value.meta);
     }
   });
@@ -48,18 +45,16 @@ export async function getAllWorks() {
 
 const WorkList = async () => {
   const [errors, works] = await getAllWorks();
-  let Content: () => JSX.Element;
+  let content;
   if (errors.length > 0 || Object.values(works).length === 0)
-    // eslint-disable-next-line react/display-name
-    Content = () => <>Cannot get works</>;
+    content = <>Cannot get works</>;
   else {
-    // eslint-disable-next-line react/display-name
-    Content = () => <WorkListTabs works={works} />;
+    content = <WorkListTabs works={works} />;
   }
   return (
     <div className="container py-16">
       <h2>Recent Works</h2>
-      <Content />
+      {content}
     </div>
   );
 };

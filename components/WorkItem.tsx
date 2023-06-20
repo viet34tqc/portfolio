@@ -8,8 +8,8 @@ const WorkItem = ({ work }: { work: TWorkMeta }) => {
     <article className="space-y-3">
       <Link href={slug} className="block rounded-md overflow-hidden">
         <Image
-          width={501}
-          height={401}
+          width={450}
+          height={300}
           src={'/' + work.thumb}
           alt=""
           className="aspect-[4/3] transition-transform duration-300 hover:scale-110"

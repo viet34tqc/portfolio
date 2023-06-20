@@ -20,6 +20,11 @@ const WorkListTabs = ({ works }: Props) => {
     const tag = work.tag as keyof typeof filteredWorks;
     filteredWorks[tag].push(work);
   });
+
+  // Sort the project
+  filteredWorks['Frontend'].sort((a, b) => a.order - b.order);
+  filteredWorks['WordPress'].sort((a, b) => a.order - b.order);
+
   return (
     <Tabs defaultValue="Frontend">
       <TabsList className="flex justify-center mb-6">

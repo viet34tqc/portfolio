@@ -1,28 +1,32 @@
 import { PropsWithChildren } from 'react';
 
 export type TWorkMeta = {
-    title: string;
-    tag: string;
-    description: string;
-    position: string;
-    tech: string;
-    thumb: string;
-    demo: string;
-    github: string;
-    slug: string;
-}
+  title: string;
+  tag: string;
+  description: string;
+  position: string;
+  tech: string;
+  thumb: string;
+  demo: string;
+  github: string;
+  slug: string;
+  order: number;
+};
 
 export type TWorkProps = {
   meta: TWorkMeta;
 };
 
-export default function Single({ children, meta }: PropsWithChildren<TWorkProps>) {
+export default function Single({
+  children,
+  meta,
+}: PropsWithChildren<TWorkProps>) {
   return (
     <article className="py-16 container">
       <div className="grid md:grid-cols-[3fr,1fr] gap-4">
         <div>
           <h1 className="mb-3">{meta.title}</h1>
-          <div className="flex gap-2 mb-6 [&>*]:text-blue">
+          <div className="flex gap-2 mb-6 [&>*]:text-blue [&>*]:font-bold ">
             {meta.github && (
               <a href={meta.github} target="_blank">
                 Github
